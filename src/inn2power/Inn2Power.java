@@ -21,7 +21,7 @@ public class Inn2Power extends Application
     @Override
     public void start(Stage stage) throws Exception
     {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Grafisk.fxml"));
         
         Scene scene = new Scene(root);
         
