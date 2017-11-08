@@ -5,9 +5,14 @@
  */
 package inn2power;
 
+import be.Company;
+import dal.CompanyDAO;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TitledPane;
+import javafx.scene.input.MouseEvent;
 
 /**
  * FXML Controller class
@@ -17,6 +22,7 @@ import javafx.fxml.Initializable;
 public class GrafiskController implements Initializable
 {
 
+
     /**
      * Initializes the controller class.
      */
@@ -25,5 +31,6 @@ public class GrafiskController implements Initializable
     {
         // TODO
     }    
+
     
 }
