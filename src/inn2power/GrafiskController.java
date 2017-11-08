@@ -7,10 +7,16 @@ package inn2power;
 
 import be.Company;
 import dal.CompanyDAO;
+import inn2power.GUI.Model.CompanyModel;
+import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TitledPane;
 import javafx.scene.input.MouseEvent;
 
@@ -22,6 +28,13 @@ import javafx.scene.input.MouseEvent;
 public class GrafiskController implements Initializable
 {
 
+    @FXML
+    private ListView<Company> listCompanies;
+    private CompanyModel companyModel;
+    private CompanyDAO companyDAO;
+   
+
+
 
     /**
      * Initializes the controller class.
@@ -29,7 +42,15 @@ public class GrafiskController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-        // TODO
+        try
+        {
+            companyModel = new CompanyModel();
+            listCompanies.setItems(companyModel.getAllCompanies());
+            companyDAO = new CompanyDAO();
+        } catch (IOException ex)
+        {
+            Logger.getLogger(GrafiskController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }    
 
     
