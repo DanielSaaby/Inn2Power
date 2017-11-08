@@ -31,7 +31,7 @@ public class GrafiskController implements Initializable
     @FXML
     private ListView<Company> listCompanies;
     private CompanyModel companyModel;
-    private CompanyDAO companyDAO;
+    
    
 
 
@@ -42,15 +42,14 @@ public class GrafiskController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-        try
-        {
+        
+        
+            
             companyModel = new CompanyModel();
             listCompanies.setItems(companyModel.getAllCompanies());
-            companyDAO = new CompanyDAO();
-        } catch (IOException ex)
-        {
-            Logger.getLogger(GrafiskController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+            
+       
+        
     }    
 
     

@@ -8,6 +8,9 @@ package inn2power.GUI.Model;
 import be.Company;
 import dal.CompanyDAO;
 import java.io.IOException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -18,13 +21,21 @@ import javafx.collections.ObservableList;
 public class CompanyModel
 {
     private final ObservableList<Company> companies;
-    public CompanyDAO company;
+    private CompanyDAO companyDAO;
     
 
     public CompanyModel()
     {
-        this.companies = FXCollections.emptyObservableList();
-        companies.addAll(companies);
+        this.companies = FXCollections.observableArrayList();
+        try
+        {
+            companyDAO = new CompanyDAO();
+            List<Company> cs = companyDAO.getAllCompanies();
+            companies.addAll(cs);
+        } catch (IOException ex)
+        {
+            Logger.getLogger(CompanyModel.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public ObservableList<Company> getAllCompanies()
