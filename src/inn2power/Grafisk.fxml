@@ -8,9 +8,9 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="446.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inn2power.GrafiskController">
    <children>
-      <TextField layoutX="14.0" layoutY="14.0" />
-      <Button layoutX="14.0" layoutY="50.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="138.0" text="Søg på land" />
-      <RadioButton layoutX="187.0" layoutY="18.0" mnemonicParsing="false" text="SME" />
+      <TextField fx:id="txtQuery" layoutX="14.0" layoutY="14.0" />
+      <Button layoutX="14.0" layoutY="50.0" mnemonicParsing="false" onAction="#handleSearch" prefHeight="26.0" prefWidth="138.0" text="Søg på land" />
+      <RadioButton fx:id="radioSME" layoutX="187.0" layoutY="18.0" mnemonicParsing="false" text="SME" />
       <ListView fx:id="listCompanies" layoutX="354.0" layoutY="18.0" prefHeight="373.0" prefWidth="452.0" />
    </children>
 </AnchorPane>
