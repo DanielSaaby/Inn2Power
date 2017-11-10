@@ -35,11 +35,12 @@ public class GrafiskController implements Initializable
 
     @FXML
     private ListView<Company> listCompanies;
-    private CompanyModel companyModel;
     @FXML
     private TextField txtQuery;
     @FXML
     private RadioButton radioSME;
+    
+    private CompanyModel companyModel;
     
    
     public GrafiskController()
@@ -69,14 +70,24 @@ public class GrafiskController implements Initializable
     void handleSearch(ActionEvent event)
     {   
         
+        String searchText = txtQuery.getText().trim();
+        if(!searchText.isEmpty())
+        {
+            companyModel.search(searchText);
+        }
         
-        String query = txtQuery.getText().trim();
-        List<String> searchResult = null;
-        IWordSearcher searchStrategy;
-        boolean isCaseSensitive = radioSME.isSelected();
-        searchStrategy = new ContainsSearch(query, isCaseSensitive);
+        
+        
+        
+        
+        
+        //String query = txtQuery.getText().trim();
+        //List<String> searchResult = null;
+        //IWordSearcher searchStrategy;
+        //boolean isCaseSensitive = radioSME.isSelected();
+        //searchStrategy = new ContainsSearch(query, isCaseSensitive);
         //searchResult = new ContainsSearch.search(searchStrategy);
-        
+        //Muligvis brug strategyPattern
     
         
     }
