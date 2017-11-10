@@ -75,7 +75,7 @@ public class GrafiskController implements Initializable
         IWordSearcher searchStrategy;
         boolean isCaseSensitive = radioSME.isSelected();
         searchStrategy = new ContainsSearch(query, isCaseSensitive);
-        searchResult = new ContainsSearch.search(searchStrategy);
+        //searchResult = new ContainsSearch.search(searchStrategy);
         
     
         
