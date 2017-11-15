@@ -5,6 +5,11 @@
  */
 package inn2power;
 
+import be.Company;
+import inn2power.DAL.MyCompanyDAO;
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -32,8 +37,24 @@ public class Inn2Power extends Application
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args)
+    public static void main(String[] args) throws IOException
     {
+        File file = new File("companies.csv");
+        
+        MyCompanyDAO myCompanyDAO = new MyCompanyDAO();
+        
+        List<Company> allCompanies = myCompanyDAO.readCompaniesFromCSV(file);
+        
+        System.out.println("Companies in CSV: " + allCompanies.size());
+        
+        File saveFile = new File("Companies.ser");
+        
+        myCompanyDAO.writeCompaniesToSer(saveFile,allCompanies);
+        
+        List<Company> savedCompanies = myCompanyDAO.readCompaniesFromSer(saveFile);
+        
+        System.out.println("Saved companies count: " + savedCompanies.size());
+        
         launch(args);
     }
     
