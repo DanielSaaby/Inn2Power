@@ -6,6 +6,7 @@
 package inn2power;
 
 import be.Company;
+import dal.CompanyDAO;
 import inn2power.DAL.MyCompanyDAO;
 import java.io.File;
 import java.io.IOException;
@@ -54,6 +55,12 @@ public class Inn2Power extends Application
         List<Company> savedCompanies = myCompanyDAO.readCompaniesFromSer(saveFile);
         
         System.out.println("Saved companies count: " + savedCompanies.size());
+        
+        CompanyDAO companyDAO = new CompanyDAO();
+        
+        List<Company> allCompaniesEmpty = companyDAO.getAllCompanies();
+        
+        
         
         launch(args);
     }
