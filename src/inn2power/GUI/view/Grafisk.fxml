@@ -6,7 +6,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="446.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inn2power.GrafiskController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="446.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inn2power.GUI.controller.GrafiskController">
    <children>
       <TextField fx:id="txtQuery" layoutX="23.0" layoutY="14.0" prefHeight="26.0" prefWidth="697.0" />
       <Button layoutX="500.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSearch" prefHeight="26.0" prefWidth="219.0" text="Søg på navn" />

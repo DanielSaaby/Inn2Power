@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package inn2power;
+package inn2power.GUI;
 
 import be.Company;
 import dal.CompanyDAO;
@@ -27,7 +27,7 @@ public class Inn2Power extends Application
     @Override
     public void start(Stage stage) throws Exception
     {
-        Parent root = FXMLLoader.load(getClass().getResource("Grafisk.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("view/Grafisk.fxml"));
         
         Scene scene = new Scene(root);
         
